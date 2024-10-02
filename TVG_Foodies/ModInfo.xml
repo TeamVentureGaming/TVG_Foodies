@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <Name value="TVG_Foodies" />
+	<DisplayName value="Team Venture Foodies" />
+    <Description value="Adds a special recipe in honor of each trader!" />
+    <Author value="TeamVentureGaming" />
+    <Version value="0.0.1" />
+</xml>

@@ -1,0 +1,49 @@
+<configs>
+
+	<!-- change the gather challenge to craft bedroll -->
+	<remove xpath="/challenges/challenge[@name='gatherResourcesStoneAxe']"/>
+	<insertAfter xpath="/challenges/challenge[@name='craftStoneAxe']">
+		<challenge name="craftBedrollTVG" title_key="challengeCraftBedrollTVG" icon="ui_game_symbol_challenge_homesteading_place_bedroll" group="Basics"
+		short_description_key="challengeCraftBedrollShortTVG" description_key="challengeCraftBedrollDescTVG">
+			<objective type="Craft" item="bedrollBlockVariantHelper" count="1"/>
+		</challenge>
+	</insertAfter>
+
+	<remove xpath="/challenges/challenge[@name='purchaseItems' or @name='sellItems' or @name='questComplete' or @name='questTierComplete' or @name='questTraderToTraderComplete']"/>
+	<insertAfter xpath="/challenges/challenge[@name='meetRekt']">
+		<challenge name="foodRektTVG" title_key="challengeFoodRektTVG" icon="ui_game_symbol_campfire" group="Traders" short_description_key="challengeFoodRektTVGShort" description_key="challengeFoodRektTVGDesc"
+		reward_text_key="challengeFoodRektTVGReward" reward_event="challenge_reward_food_rekt_tvg">
+			<objective type="Craft" item="foodRektsRaisinSackTVG" count="2"/>
+			<objective type="UseItem" item="foodRektsRaisinSackTVG" count="2"/>
+		</challenge>
+	</insertAfter>
+	<insertAfter xpath="/challenges/challenge[@name='meetJen']">
+		<challenge name="foodJenTVG" title_key="challengeFoodJenTVG" icon="ui_game_symbol_campfire" group="Traders" short_description_key="challengeFoodJenTVGShort" description_key="challengeFoodJenTVGDesc"
+		reward_text_key="challengeFoodJenTVGReward" reward_event="challenge_reward_food_jen_tvg">
+			<objective type="Craft" item="foodJensSuperTacoTVG" count="1"/>
+			<objective type="UseItem" item="foodJensSuperTacoTVG" count="1"/>
+		</challenge>
+	</insertAfter>
+	<insertAfter xpath="/challenges/challenge[@name='meetBob']">
+		<challenge name="foodBobTVG" title_key="challengeFoodBobTVG" icon="ui_game_symbol_campfire" group="Traders" short_description_key="challengeFoodBobTVGShort" description_key="challengeFoodBobTVGDesc"
+		reward_text_key="challengeFoodBobTVGReward" reward_event="challenge_reward_food_bob_tvg">
+			<objective type="Craft" item="foodBobsBurgerTVG" count="1"/>
+			<objective type="UseItem" item="foodBobsBurgerTVG" count="1"/>
+		</challenge>
+	</insertAfter>
+	<insertAfter xpath="/challenges/challenge[@name='meetHugh']">
+		<challenge name="foodHughTVG" title_key="challengeFoodHughTVG" icon="ui_game_symbol_campfire" group="Traders" short_description_key="challengeFoodHughTVGShort" description_key="challengeFoodHughTVGDesc"
+		reward_text_key="challengeFoodHughTVGReward" reward_event="challenge_reward_food_hugh_tvg">
+			<objective type="Craft" item="foodHughsWeinerTVG" count="1"/>
+			<objective type="UseItem" item="foodHughsWeinerTVG" count="1"/>
+		</challenge>
+	</insertAfter>
+	<insertAfter xpath="/challenges/challenge[@name='meetJoel']">
+		<challenge name="foodJoelTVG" title_key="challengeFoodJoelTVG" icon="ui_game_symbol_campfire" group="Traders" short_description_key="challengeFoodJoelTVGShort" description_key="challengeFoodJoelTVGDesc"
+		reward_text_key="challengeFoodJoelTVGReward" reward_event="challenge_reward_food_joel_tvg">
+			<objective type="Craft" item="foodJoelsJumboGumboTVG" count="1"/>
+			<objective type="UseItem" item="foodJoelsJumboGumboTVG" count="1"/>
+		</challenge>
+	</insertAfter>
+
+</configs>

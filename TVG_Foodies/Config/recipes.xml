@@ -1,0 +1,99 @@
+<configs>
+
+	<!-- craft_area="campfire" craft_tool => toolCookingPot, toolCookingGrill, toolBeaker -->
+	<append xpath="/recipes">
+
+		<recipe name="foodGraceCornOnTheCobTVG" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodCropGraceCorn" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+
+		<recipe name="foodGraceCornMealTVG" count="2" tags="perkMasterChef,learnable">
+			<ingredient name="foodCropGraceCorn" count="1"/>
+		</recipe>
+		
+		<recipe name="foodGraceCornBreadTVG" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceCornMealTVG" count="1"/>
+			<ingredient name="resourceAnimalFat" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		
+		<recipe name="foodGraceShamSandwichTVG" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceCornMealTVG" count="2"/>
+			<ingredient name="foodShamSandwich" count="1"/>
+			<ingredient name="resourceAnimalFat" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		
+		<recipe name="foodGraceGrilledMeatTVG" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceMeatTVG" count="5"/>
+			<ingredient name="resourceAnimalFat" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodGraceMeatTVG,resourceAnimalFat"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="foodGraceStewTVG" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceMeatTVG" count="5"/>
+			<ingredient name="resourceAnimalFat" count="5"/>
+			<ingredient name="foodCropGraceCorn" count="2"/>
+			<ingredient name="drinkJarBoiledWater" count="2"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodGraceMeatTVG,resourceAnimalFat"/>
+			</effect_group>
+		</recipe>
+	
+		<recipe name="foodRektsRaisinSackTVG" count="1" tags="perkMasterChef,learnable">
+			<ingredient name="foodCropBlueberries" count="2"/>
+			<ingredient name="plantedGraceCorn1" count="2"/>
+		</recipe>
+
+		<recipe name="foodJensSuperTacoTVG" count="1" craft_area="campfire" craft_tool="toolBeaker" tags="perkMasterChef,learnable">
+			<ingredient name="foodCanCatfood" count="4"/>
+			<ingredient name="foodGraceCornMealTVG" count="4"/>
+			<ingredient name="drinkJarBeer" count="2"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodCanCatfood"/>
+				<passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-2" tags="foodGraceCornMealTVG"/>
+				<passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-1" tags="drinkJarBeer"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="foodBobsBurgerTVG" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceMeatTVG" count="10"/>
+			<ingredient name="foodEgg" count="3"/>
+			<ingredient name="foodGraceShamSandwichTVG" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-5" tags="foodGraceMeatTVG"/>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodEgg"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="foodHughsWeinerTVG" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceMeatTVG" count="25"/>
+			<ingredient name="resourceAnimalFat" count="10"/>
+			<ingredient name="resourceBone" count="10"/>
+			<ingredient name="resourceTestosteroneExtract" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-5,-15" tags="foodGraceMeatTVG"/>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-5" tags="resourceAnimalFat"/>
+				<passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-5" tags="resourceBone"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="foodJoelsJumboGumboTVG" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+			<ingredient name="foodGraceGrilledMeatTVG" count="10"/>
+			<ingredient name="foodGraceCornOnTheCobTVG" count="2"/>
+			<ingredient name="foodHoney" count="2"/>
+			<ingredient name="resourceAcid" count="2"/>
+			<ingredient name="ammoGasCan" count="40"/>
+			<!-- you can include more than 5 ingredients, but only the first 5 are shown unless you track the item to craft -->
+			<!-- <ingredient name="casinoCoin" count="500"/> -->
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-2,-5" tags="foodGraceGrilledMeatTVG"/>
+			</effect_group>
+		</recipe>
+		
+	</append>
+	
+</configs>

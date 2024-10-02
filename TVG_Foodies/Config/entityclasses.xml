@@ -1,0 +1,8 @@
+<configs>
+
+	<!-- Update Grace to drop Grace Meat instead of Rotting Flesh -->
+	<setattribute xpath="/entity_classes/entity_class[@name='animalBossGrace']/drop[@name='foodRottingFlesh']" name="name">
+		foodGraceMeatTVG
+	</setattribute>
+	
+</configs>

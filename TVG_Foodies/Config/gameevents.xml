@@ -1,0 +1,76 @@
+<configs>
+
+	<!-- start with items required to complete initial challenges -->
+	<append xpath="/gameevents/action_sequence[@name='game_first_spawn']">
+		<action class="SetItemSlots">
+			<property name="items_location" value="Toolbelt" />
+			<property name="items" value="drinkJarBoiledWater,foodCanChili,medicalFirstAidBandage,meleeToolTorch,resourceFeather,resourceRockSmall,resourceWood,resourceYuccaFibers" />
+			<property name="item_counts" value="1,1,1,1,5,7,25,20" />
+			<property name="slot_numbers" value="1,2,3,4,5,6,7,8" />
+		</action>
+	</append>
+
+	<append xpath="/gameevents">
+		<action_sequence name="challenge_reward_food_rekt_tvg">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="1" />
+			</action>
+			
+			<action class="AddXP">
+				<property name="xp_amount" value="1000" />
+			</action>
+		</action_sequence>
+		<action_sequence name="challenge_reward_food_jen_tvg">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="2" />
+			</action>
+			
+			<action class="AddXP">
+				<property name="xp_amount" value="2000" />
+			</action>
+		</action_sequence>
+		<action_sequence name="challenge_reward_food_bob_tvg">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="2" />
+			</action>
+			
+			<action class="AddXP">
+				<property name="xp_amount" value="2000" />
+			</action>
+		</action_sequence>
+		<action_sequence name="challenge_reward_food_hugh_tvg">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="2" />
+			</action>
+			
+			<action class="AddXP">
+				<property name="xp_amount" value="2000" />
+			</action>
+		</action_sequence>
+		<action_sequence name="challenge_reward_food_joel_tvg">
+			<property name="allow_user_trigger" value="false" />
+			<property name="action_type" value="Game" />
+			
+			<action class="AddSkillPoints">
+				<property name="skill_points" value="2" />
+			</action>
+			
+			<action class="AddXP">
+				<property name="xp_amount" value="2000" />
+			</action>
+		</action_sequence>
+	</append>
+
+</configs>

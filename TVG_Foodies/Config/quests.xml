@@ -1,0 +1,401 @@
+<configs>
+
+	<!-- remove intro to buried supplies from traders -->
+	<remove xpath="/quests/quest_list/quest[@id='intro_buried_supplies']"/>
+	<!-- set intro to completed when completing find white river trader -->
+	<insertAfter xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/action[last()]">
+		<action type="SetCVar">
+			<property name="cvar" value="IntroComplete" />
+			<property name="value" value="1" />
+			<property name="on_complete" value="true"/>
+		</action>
+	</insertAfter>
+
+	<insertAfter xpath="/quests/quest[last()]">
+	
+		<quest id="tvg_foodie_rekt_super_corn">
+			<property name="name_key" value="quest_tvg_foodie_rekt_super_corn" param1="name"/>
+			<property name="subtitle_key" value="quest_tvg_foodie_rekt_super_corn_subtitle"/>
+			<property name="description_key" value="quest_tvg_foodie_rekt_super_corn_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tvg_foodie_rekt_super_corn_offer" param1="offer"/>
+			<property name="difficulty_tier" value="1" param1="difficulty"/>
+			<property name="statement_key" value="quest_tvg_foodie_rekt_super_corn_statement"/>
+			<property name="response_key" value="quest_tvg_foodie_rekt_super_corn_response"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="reward_choices_count" value="5"/>
+			<!-- <property name="extra_tags" value="infested" param1="extra_tags"/> -->
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="single_quest" value="true"/>
+			<property name="always_allow" value="true"/>
+			<!-- <property name="unique_key" value="traderquest"/> -->
+			<property name="quest_type" value="special"/>
+			<!-- <property name="spawn_multiplier" value="2" param1="spawn_multiplier"/> -->
+			<!-- <property name="gamestage_mod" value=".6" param1="gamestage_mod"/> -->
+			<!-- <property name="gamestage_bonus" value="30" param1="gamestage_bonus"/> -->
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_tvg_foodie_rekt_super_corn_completion"/>
+			<!-- <property name="return_to_quest_giver" value="true"/> -->
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+				<property name="biome_filter" value="" param1="biome_filter"/>
+				<property name="nav_object" value="quest"/>
+				<property name="poi_tier" value="2" param1="poi_tier"/>
+			</objective>
+			
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally"/>
+			</objective>
+			
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<!-- <property name="quest_item" value="plantedGraceCorn1Schematic"/> -->
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+			
+			<action type="UnlockPOI">
+				<property name="phase" value="4"/>
+			</action>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="5000"/>
+			<reward type="Item" id="casinoCoin" value="1000"/>
+			<reward type="Item" id="plantedGraceCorn1Schematic" value="1"/>
+			
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="tvg_foodie_rekt">
+			<property name="name_key" value="quest_tvg_foodie_rekt" param1="name"/>
+			<property name="subtitle_key" value="quest_tvg_foodie_rekt_subtitle"/>
+			<property name="description_key" value="quest_tvg_foodie_rekt_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tvg_foodie_rekt_offer" param1="offer"/>
+			<property name="difficulty_tier" value="1" param1="difficulty"/>
+			<property name="statement_key" value="quest_tvg_foodie_rekt_statement"/>
+			<property name="response_key" value="quest_tvg_foodie_rekt_response"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="reward_choices_count" value="5"/>
+			<!-- <property name="extra_tags" value="infested" param1="extra_tags"/> -->
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="single_quest" value="true"/>
+			<property name="always_allow" value="false"/>
+			<!-- <property name="unique_key" value="traderquest"/> -->
+			<property name="quest_type" value="special"/>
+			<!-- <property name="spawn_multiplier" value="2" param1="spawn_multiplier"/> -->
+			<!-- <property name="gamestage_mod" value=".6" param1="gamestage_mod"/> -->
+			<!-- <property name="gamestage_bonus" value="30" param1="gamestage_bonus"/> -->
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_tvg_foodie_rekt_completion"/>
+			<!-- <property name="return_to_quest_giver" value="true"/> -->
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+				<property name="biome_filter" value="" param1="biome_filter"/>
+				<property name="nav_object" value="quest"/>
+				<property name="poi_tier" value="2" param1="poi_tier"/>
+			</objective>
+			
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally"/>
+			</objective>
+			
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<!-- <property name="quest_item" value="foodRektsRaisinSackTVGSchematic"/> -->
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+			
+			<action type="UnlockPOI">
+				<property name="phase" value="4"/>
+			</action>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="5000"/>
+			<reward type="Item" id="casinoCoin" value="1000"/>
+			<reward type="Item" id="foodRektsRaisinSackTVGSchematic" value="1"/>
+			
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="tvg_foodie_jen_super_corn_meal">
+			<property name="name_key" value="quest_tvg_foodie_jen_super_corn_meal" param1="name"/>
+			<property name="subtitle_key" value="quest_tvg_foodie_jen_super_corn_meal_subtitle"/>
+			<property name="description_key" value="quest_tvg_foodie_jen_super_corn_meal_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tvg_foodie_jen_super_corn_meal_offer" param1="offer"/>
+			<property name="difficulty_tier" value="2" param1="difficulty"/>
+			<property name="statement_key" value="quest_tvg_foodie_jen_super_corn_meal_statement"/>
+			<property name="response_key" value="quest_tvg_foodie_jen_super_corn_meal_response"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="reward_choices_count" value="5"/>
+			<!-- <property name="extra_tags" value="infested" param1="extra_tags"/> -->
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="single_quest" value="true"/>
+			<property name="always_allow" value="true"/>
+			<!-- <property name="unique_key" value="traderquest"/> -->
+			<property name="quest_type" value="special"/>
+			<!-- <property name="spawn_multiplier" value="2" param1="spawn_multiplier"/> -->
+			<!-- <property name="gamestage_mod" value=".6" param1="gamestage_mod"/> -->
+			<!-- <property name="gamestage_bonus" value="30" param1="gamestage_bonus"/> -->
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_tvg_foodie_jen_super_corn_meal_completion"/>
+			<!-- <property name="return_to_quest_giver" value="true"/> -->
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+				<property name="biome_filter" value="" param1="biome_filter"/>
+				<property name="nav_object" value="quest"/>
+				<property name="poi_tier" value="2" param1="poi_tier"/>
+			</objective>
+			
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally"/>
+			</objective>
+			
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<!-- <property name="quest_item" value="foodGraceCornMealTVGSchematic"/> -->
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+			
+			<action type="UnlockPOI">
+				<property name="phase" value="4"/>
+			</action>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="5000"/>
+			<reward type="Item" id="casinoCoin" value="1000"/>
+			<reward type="Item" id="foodGraceCornMealTVGSchematic" value="1"/>
+			
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+		</quest>
+		
+		<quest id="tvg_foodie_jen">
+			<property name="name_key" value="quest_tvg_foodie_jen" param1="name"/>
+			<property name="subtitle_key" value="quest_tvg_foodie_jen_subtitle"/>
+			<property name="description_key" value="quest_tvg_foodie_jen_description"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="offer_key" value="quest_tvg_foodie_jen_offer" param1="offer"/>
+			<property name="difficulty_tier" value="2" param1="difficulty"/>
+			<property name="statement_key" value="quest_tvg_foodie_jen_statement"/>
+			<property name="response_key" value="quest_tvg_foodie_jen_response"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="reward_choices_count" value="5"/>
+			<!-- <property name="extra_tags" value="infested" param1="extra_tags"/> -->
+			<property name="add_to_tier_complete" value="false"/>
+			<property name="shareable" value="false"/>
+			<property name="single_quest" value="true"/>
+			<property name="always_allow" value="false"/>
+			<!-- <property name="unique_key" value="traderquest"/> -->
+			<property name="quest_type" value="special"/>
+			<!-- <property name="spawn_multiplier" value="2" param1="spawn_multiplier"/> -->
+			<!-- <property name="gamestage_mod" value=".6" param1="gamestage_mod"/> -->
+			<!-- <property name="gamestage_bonus" value="30" param1="gamestage_bonus"/> -->
+			
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_tvg_foodie_jen_completion"/>
+			<!-- <property name="return_to_quest_giver" value="true"/> -->
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+				<property name="biome_filter" value="" param1="biome_filter"/>
+				<property name="nav_object" value="quest"/>
+				<property name="poi_tier" value="2" param1="poi_tier"/>
+			</objective>
+			
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally"/>
+			</objective>
+			
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<!-- <property name="quest_item" value="foodGraceCornMealTVGSchematic"/> -->
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="25"/>
+			</objective>
+			
+			<action type="UnlockPOI">
+				<property name="phase" value="4"/>
+			</action>
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader"/>
+			</objective>
+
+			<reward type="Exp" value="5000"/>
+			<reward type="Item" id="casinoCoin" value="1000"/>
+			<reward type="Item" id="foodGraceCornMealTVGSchematic" value="1"/>
+			<reward type="Item" id="foodJensSuperTacoTVGSchematic" value="1"/>
+			
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+		</quest>
+
+	</insertAfter>
+
+	<append xpath="/quests/quest_list[@id='trader_rekt_quests']">
+		<quest id="tvg_foodie_rekt_super_corn"/>
+		<!-- <quest id="tvg_foodie_rekt"/> -->
+	</append>
+	
+	<!-- Give the secret recipe on tier complete -->
+	<append xpath="/quests/quest[@id='quest_tier1complete']">
+		<reward type="Item" id="foodRektsRaisinSackTVGSchematic" value="1"/>
+	</append>
+	
+	<!-- Give a quest for the secret recipe on tier complete -->
+	<!--
+	<append xpath="/quests/quest_tier_rewards/quest_tier_reward[@tier='2']">
+		<reward type="Quest" id="tvg_foodie_rekt"/>
+	</append>
+	-->
+	
+	<append xpath="/quests/quest_list[@id='trader_jen_quests']">
+		<quest id="tvg_foodie_jen_super_corn_meal"/>
+		<!-- <quest id="tvg_foodie_jen"/> -->
+	</append>
+
+	<!-- Give the secret recipe on tier complete -->
+	<append xpath="/quests/quest[@id='quest_tier2complete']">
+		<reward type="Item" id="foodJensSuperTacoTVGSchematic" value="1"/>
+	</append>
+	
+	<!-- Give a quest for the secret recipe on tier complete -->
+	<!--
+	<append xpath="/quests/quest_tier_rewards/quest_tier_reward[@tier='3']">
+		<reward type="Quest" id="tvg_foodie_jen"/>
+	</append>
+	-->
+	
+</configs>
